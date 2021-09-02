@@ -1,12 +1,12 @@
-import { ProfissionalController } from './profissional.controller';
-import { Profissional } from './../entities/profissional.models';
-import { ProfissionalService } from './profissional.service';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Profissional } from '../entity/profissional.entity';
+import { ProfissionalController } from './profissionals.controller';
+import { ProfissionalsService } from './profissionals.service';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Profissional])],
-    providers: [ProfissionalService],
+    providers: [ProfissionalsService],
     controllers: [ProfissionalController],
     exports: [TypeOrmModule]
 })

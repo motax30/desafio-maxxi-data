@@ -1,5 +1,5 @@
-import { TipoProfissional } from './tipo_profissional,model';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany, JoinColumn, JoinTable } from "typeorm"
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { TipoProfissional } from "./tipo_profissional.entity";
 
 @Entity()
 export class Profissional {
@@ -13,7 +13,7 @@ export class Profissional {
     @Column()
     email: string;
     
-    @ManyToMany(()=> Profissional)
+    @ManyToMany(()=> TipoProfissional)
     @JoinTable({name:'profissional_tipo_relacao'})
     tipoProfissional: TipoProfissional[]
     
