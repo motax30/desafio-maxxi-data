@@ -4,6 +4,16 @@ import { TipoProfissional } from "./tipo_profissional.entity";
 @Entity()
 export class Profissional {
 
+    constructor(profissional?: Partial<Profissional>){
+        this.id = profissional?.id;
+        this.nome = profissional?.nome;
+        this.telefone = profissional?.telefone;
+        this.email = profissional?.email;
+        this.tipoProfissional = profissional?.tipoProfissional;
+        this.createdAt = profissional?.createdAt;
+        this.updatedAt = profissional?.updatedAt;
+    }
+
     @PrimaryGeneratedColumn()
     id: number;
     
