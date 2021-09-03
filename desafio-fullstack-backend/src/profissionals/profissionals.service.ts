@@ -1,8 +1,8 @@
 import { Profissional } from '../entity/profissional.entity';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateProfissionalDto } from './dto/create-profissionaldto.ts';
+import { CreateProfissionalDto } from '../dto/create-profissionaldto.ts';
 
 @Injectable()
 export class ProfissionalsService {
@@ -11,7 +11,7 @@ export class ProfissionalsService {
         private readonly profissionalsRepository: Repository<Profissional>,
       ) {}
 
-      create(createProfessionalDto: CreateProfissionalDto): Promise<Profissional> {
+      async create(createProfessionalDto: CreateProfissionalDto): Promise<Profissional> {
         const profissional = new Profissional();
         profissional.nome = createProfessionalDto.nome;
         profissional.telefone = createProfessionalDto.telefone;
@@ -26,8 +26,12 @@ export class ProfissionalsService {
         return this.profissionalsRepository.find();
       }
     
-      findOne(id: string): Promise<Profissional> {
-        return this.profissionalsRepository.findOne(id);
+      async findOne(id: string): Promise<Profissional> {
+        try {
+          return await this.profissionalsRepository.findOne(id);
+        } catch (error) {
+          throw new NotFoundException(error.message)
+        }
       }
     
       async remove(id: string): Promise<void> {

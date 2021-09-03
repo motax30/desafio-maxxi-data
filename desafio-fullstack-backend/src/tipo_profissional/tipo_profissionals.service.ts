@@ -2,7 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateTipoProfissionalDto } from './dto/create_tipo_profissional.dto';
+import { CreateTipoProfissionalDto } from '../dto/create_tipo_profissional.dto';
 import { TipoProfissional } from '../entity/tipo_profissional.entity';
 
 @Injectable()

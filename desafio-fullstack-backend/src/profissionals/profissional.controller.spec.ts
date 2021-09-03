@@ -2,7 +2,7 @@
 import { Profissional } from '../entity/profissional.entity';
 import { ProfissionalController } from './profissionals.controller';
 import { ProfissionalsService } from './profissionals.service';
-import { CreateProfissionalDto } from './dto/create-profissionaldto.ts';
+import { CreateProfissionalDto } from '../dto/create-profissionaldto.ts';
 import { TipoProfissional } from '../entity/tipo_profissional.entity';
 
 const newProfissional: Profissional = new Profissional({

@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TipoProfissionalController } from './tipo_profissionals.controller';
 import { TipoProfissionalsService } from './tipo_profissionals.service';
 import { TipoProfissional } from '../entity/tipo_profissional.entity';
-import { CreateTipoProfissionalDto } from './dto/create_tipo_profissional.dto';
+import { CreateTipoProfissionalDto } from '../dto/create_tipo_profissional.dto';
 
 const newTipoProfissional: TipoProfissional = new TipoProfissional({descricao:'Chefe da Seção de Testes', situacao: true});
 const tipoProfissionalList: TipoProfissional[] = [

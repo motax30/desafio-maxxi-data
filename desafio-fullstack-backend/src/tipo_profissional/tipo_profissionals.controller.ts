@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { CreateTipoProfissionalDto } from './dto/create_tipo_profissional.dto';
+import { CreateTipoProfissionalDto } from '../dto/create_tipo_profissional.dto';
 import { TipoProfissional } from '../entity/tipo_profissional.entity';
 import { TipoProfissionalsService } from './tipo_profissionals.service';
 
