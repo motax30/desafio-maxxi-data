@@ -17,7 +17,7 @@ const profissionalList: Profissional[] = [
 const tipoProfissional: TipoProfissional = new TipoProfissional({
   descricao : 'Chefe da Seção de Testes', situacao : true})
 
-describe(ProfissionalController, ()=> {
+describe('ProfissionalController', ()=> {
     let profissionalController: ProfissionalController;
     let profissionalService: ProfissionalsService;
 
@@ -30,7 +30,7 @@ describe(ProfissionalController, ()=> {
             create: jest.fn().mockResolvedValue(newProfissional),
             findAll: jest.fn().mockResolvedValue(profissionalList),
             findOne: jest.fn().mockResolvedValue(profissionalList[0]),
-            remove: jest.fn().mockResolvedValue(undefined)
+            remove: jest.fn().mockResolvedValue(profissionalList[0])
           }
         }],
       }).compile();
@@ -106,7 +106,7 @@ describe(ProfissionalController, ()=> {
       //Act
       const result = await profissionalController.remove('1');
       //Assert
-      expect(result).toBeUndefined();
+      expect(result).toEqual(profissionalList[0]);
     });
 
     it('should throw an exception', ()=>{
