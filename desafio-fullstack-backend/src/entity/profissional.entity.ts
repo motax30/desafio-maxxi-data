@@ -3,6 +3,7 @@ import { TipoProfissional } from "./tipo_profissional.entity";
 
 @Entity()
 export class Profissional {
+
     @PrimaryGeneratedColumn()
     id: number;
     
