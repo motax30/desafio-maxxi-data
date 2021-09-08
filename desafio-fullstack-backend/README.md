@@ -26,6 +26,15 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Database
+
+Postgres
+    
+  Configuration: 
+   - create database with name "desafio"
+   - create user with name "desafio" and password "desafio"
+   - Associate this user to database "desafio"
+
 ## Installation
 
 ```bash
